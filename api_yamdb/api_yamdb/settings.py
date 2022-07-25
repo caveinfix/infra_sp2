@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     "reviews",
 ]
 
-AUTH_USER_MODEL = "reviews.CustomUser"  # Кастомная модель по умолчанию
+AUTH_USER_MODEL = "reviews.CustomUser"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -126,8 +126,8 @@ SIMPLE_JWT = {
 
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")  # yandex login
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")  # yandex password
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 SERVER_EMAIL = EMAIL_HOST_USER
