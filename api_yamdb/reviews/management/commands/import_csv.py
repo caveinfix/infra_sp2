@@ -20,6 +20,8 @@ MODELS = (
     Genre,
     GenreTitle,
     Comment,
+    CustomUser,
+    
 )
 
 
@@ -30,6 +32,16 @@ class Command(BaseCommand):
         if Title.objects.count() > 1:
             for model in MODELS:
                 model.objects.all().delete()
+
+        with open("static/data/users.csv", "r") as csv_file:
+            data = csv.DictReader(csv_file, delimiter=",")
+            for row in data:
+                user_obj, created = CustomUser.objects.update_or_create(
+                    id=row["id"],
+                    username=row["username"],
+                    email=row["email"],
+                    role=row["role"]
+                )
 
         with open("static/data/category.csv", "r") as csv_file:
             data = csv.DictReader(csv_file, delimiter=",")
