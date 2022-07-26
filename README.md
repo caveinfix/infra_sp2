@@ -2,8 +2,8 @@
 ## Инструкция
 Скачать с GIT
 git clone git@github.com:caveinfix/infra_sp2.git
-Скачать с Dockerhub
-docker pull caveinfix/api_yamdb:v1
+Скачать образ с Dockerhub в программу Docker
+docker pull caveinfix/api_yamdb:v2
 
 Пример файла .env. Должен находится в папке ./infra_sp2/infra/:
 SECRET_KEY=... (ключ к Джанго проекту)
