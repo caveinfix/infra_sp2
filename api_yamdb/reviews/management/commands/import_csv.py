@@ -1,5 +1,3 @@
-# Запуск: python manage.py import_csv
-
 import csv
 from django.core.management import BaseCommand
 
@@ -21,7 +19,6 @@ MODELS = (
     GenreTitle,
     Comment,
     CustomUser,
-    
 )
 
 
@@ -40,7 +37,7 @@ class Command(BaseCommand):
                     id=row["id"],
                     username=row["username"],
                     email=row["email"],
-                    role=row["role"]
+                    role=row["role"],
                 )
 
         with open("static/data/category.csv", "r") as csv_file:

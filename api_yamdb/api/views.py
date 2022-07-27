@@ -23,7 +23,6 @@ from .serializers import (
 from .mixins import ListCreateDestroyViewSet
 from .tokens import get_jwt_token
 from .permissions import (
-    IsAdminOrReadOnly,
     IsAdminOrSuperuser,
     ProfilePermission,
     IsAdminOrReadOnly,
